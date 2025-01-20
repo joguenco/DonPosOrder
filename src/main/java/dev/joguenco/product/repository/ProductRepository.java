@@ -1,4 +1,4 @@
-package dev.joguenco.product;
+package dev.joguenco.product.repository;
 
 import dev.joguenco.product.domain.Product;
 import io.micronaut.core.annotation.NonNull;

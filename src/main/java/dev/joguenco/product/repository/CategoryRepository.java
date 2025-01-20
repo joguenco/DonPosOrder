@@ -1,4 +1,4 @@
-package dev.joguenco.product;
+package dev.joguenco.product.repository;
 
 import dev.joguenco.product.domain.Category;
 import io.micronaut.data.jdbc.annotation.JdbcRepository;
