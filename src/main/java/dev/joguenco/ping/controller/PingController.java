@@ -7,8 +7,8 @@ import io.micronaut.http.annotation.Get;
 @Controller("/overlord/order/v1")
 public class PingController {
 
-    @Get("/ping")
-    HttpResponse<Ping> ping() {
-        return HttpResponse.ok(new Ping("pong"));
-    }
+  @Get("/ping")
+  HttpResponse<Ping> ping() {
+    return HttpResponse.ok(new Ping("pong"));
+  }
 }

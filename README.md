@@ -7,6 +7,11 @@ Overlord Order
 * MariaDB
 * Gradle 8.11.1
 
+## Format
+```
+gradle spotlessApply
+```
+
 ## Date Format
 ```
 @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
