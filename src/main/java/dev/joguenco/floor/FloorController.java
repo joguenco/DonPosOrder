@@ -26,6 +26,6 @@ public class FloorController {
 
   @Get("/places/{floorId}")
   public List<Place> listPlace(String floorId) {
-    return placeRepository.findByFloor(floorId);
+    return placeRepository.findAllByFloor(floorId);
   }
 }

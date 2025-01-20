@@ -1,6 +1,6 @@
-package dev.joguenco.floor.repository;
+package dev.joguenco.product;
 
-import dev.joguenco.floor.domain.Place;
+import dev.joguenco.product.domain.Product;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.data.annotation.Query;
 import io.micronaut.data.jdbc.annotation.JdbcRepository;
@@ -9,8 +9,8 @@ import io.micronaut.data.repository.GenericRepository;
 import java.util.List;
 
 @JdbcRepository(dialect = Dialect.MYSQL)
-public interface PlaceRepository extends GenericRepository<Place, String> {
+public interface ProductRepository extends GenericRepository<Product, String> {
 
-  @Query("select p.* from places p where p.floor = :floorId")
-  List<Place> findAllByFloor(@NonNull String floorId);
+  @Query("select p.* from products p where p.category = :categoryId")
+  List<Product> findAllByCategory(@NonNull String categoryId);
 }
