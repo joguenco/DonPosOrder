@@ -16,9 +16,9 @@ http http://localhost:8080/donpos/order/v1/floors/places/0
 ```
 ## Get Category
 ```
-http://localhost:8080/donpos/order/v1/products/categories
+http http://localhost:8080/donpos/order/v1/products/categories
 ```
 ## Get Product
 ```
-http://localhost:8080/donpos/order/v1/products/001
+http http://localhost:8080/donpos/order/v1/products/001
 ```
