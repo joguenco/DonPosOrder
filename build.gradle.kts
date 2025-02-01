@@ -14,19 +14,25 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
     annotationProcessor("io.micronaut.servlet:micronaut-servlet-processor")
     annotationProcessor("org.projectlombok:lombok")
+    implementation("io.micronaut.security:micronaut-security-jwt")
+    implementation("io.micronaut.validation:micronaut-validation")
     implementation("io.micronaut.data:micronaut-data-jdbc")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut.reactor:micronaut-reactor")
     compileOnly("io.micronaut:micronaut-http-client")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
     testImplementation("io.micronaut:micronaut-http-client")
+    aotPlugins(platform("io.micronaut.platform:micronaut-platform:4.7.4"))
+    aotPlugins("io.micronaut.security:micronaut-security-aot")
 }
 
 

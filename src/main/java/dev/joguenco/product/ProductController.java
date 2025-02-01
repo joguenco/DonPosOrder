@@ -7,8 +7,11 @@ import dev.joguenco.product.repository.ProductRepository;
 import io.micronaut.data.model.Sort;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import java.util.List;
 
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/donpos/order/v1/products")
 public class ProductController {
 

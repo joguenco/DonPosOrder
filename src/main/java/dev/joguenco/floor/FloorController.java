@@ -6,8 +6,11 @@ import dev.joguenco.floor.repository.FloorRepository;
 import dev.joguenco.floor.repository.PlaceRepository;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
+import io.micronaut.security.annotation.Secured;
+import io.micronaut.security.rules.SecurityRule;
 import java.util.List;
 
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/donpos/order/v1/floors")
 public class FloorController {
 
