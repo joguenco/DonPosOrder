@@ -9,7 +9,7 @@ import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import java.util.List;
 
-@Controller("/overlord/order/v1/products")
+@Controller("/donpos/order/v1/products")
 public class ProductController {
 
   protected final CategoryRepository categoryRepository;

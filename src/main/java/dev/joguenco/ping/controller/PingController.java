@@ -4,7 +4,7 @@ import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 
-@Controller("/overlord/order/v1")
+@Controller("/donpos/order/v1")
 public class PingController {
 
   @Get("/ping")

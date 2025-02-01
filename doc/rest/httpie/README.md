@@ -4,21 +4,21 @@
 
 ## GET ping
 ```
-http localhost:8080/overlord/order/v1/ping
+http localhost:8080/donpos/order/v1/ping
 ```
 ## GET Floor
 ```
-http http://localhost:8080/overlord/order/v1/floors
+http http://localhost:8080/donpos/order/v1/floors
 ```
 ## GET Place
 ```
-http http://localhost:8080/overlord/order/v1/floors/places/0
+http http://localhost:8080/donpos/order/v1/floors/places/0
 ```
 ## Get Category
 ```
-http://localhost:8080/overlord/order/v1/products/categories
+http://localhost:8080/donpos/order/v1/products/categories
 ```
 ## Get Product
 ```
-http://localhost:8080/overlord/order/v1/products/001
+http://localhost:8080/donpos/order/v1/products/001
 ```

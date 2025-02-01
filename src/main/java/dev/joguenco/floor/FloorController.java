@@ -8,7 +8,7 @@ import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import java.util.List;
 
-@Controller("/overlord/order/v1/floors")
+@Controller("/donpos/order/v1/floors")
 public class FloorController {
 
   protected final FloorRepository floorRepository;
