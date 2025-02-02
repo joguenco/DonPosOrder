@@ -1,5 +1,7 @@
 package dev.joguenco.security;
 
+import dev.joguenco.security.repository.UserRepository;
+import dev.joguenco.util.Hashcypher;
 import io.micronaut.core.annotation.NonNull;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.http.HttpRequest;
@@ -12,13 +14,29 @@ import jakarta.inject.Singleton;
 @Singleton
 class AuthenticationProviderUserPassword<B> implements HttpRequestAuthenticationProvider<B> {
 
+  protected final UserRepository userRepository;
+
+  AuthenticationProviderUserPassword(UserRepository userRepository) {
+    this.userRepository = userRepository;
+  }
+
   @Override
   public AuthenticationResponse authenticate(
       @Nullable HttpRequest<B> httpRequest,
       @NonNull AuthenticationRequest<String, String> authenticationRequest) {
-    return authenticationRequest.getIdentity().equals("sherlock")
-            && authenticationRequest.getSecret().equals("password")
-        ? AuthenticationResponse.success(authenticationRequest.getIdentity())
-        : AuthenticationResponse.failure(AuthenticationFailureReason.CREDENTIALS_DO_NOT_MATCH);
+    final var username = authenticationRequest.getIdentity();
+    final var password = authenticationRequest.getSecret();
+
+    final var user = userRepository.findByUsername(username).orElse(null);
+
+    if (user == null) {
+      return AuthenticationResponse.failure(AuthenticationFailureReason.USER_NOT_FOUND);
+    }
+
+    if (Hashcypher.authenticate(password, user.password())) {
+      return AuthenticationResponse.success(username);
+    }
+
+    return AuthenticationResponse.failure(AuthenticationFailureReason.CREDENTIALS_DO_NOT_MATCH);
   }
 }

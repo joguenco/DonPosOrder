@@ -12,9 +12,7 @@ import java.time.Instant;
 @MappedEntity("refresh_token")
 public class RefreshToken {
 
-  @Id
-  @GeneratedValue
-  @NonNull private Long id;
+  @Id @GeneratedValue @NonNull private Long id;
 
   @NonNull @NotBlank private String username;
 
@@ -22,8 +20,7 @@ public class RefreshToken {
 
   @NonNull @NotNull private Boolean revoked;
 
-  @DateCreated
-  @NonNull @NotNull private Instant dateCreated;
+  @DateCreated @NonNull @NotNull private Instant dateCreated;
 
   public RefreshToken() {}
 
