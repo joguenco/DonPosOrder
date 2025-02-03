@@ -11,6 +11,6 @@ import lombok.NonNull;
 @JdbcRepository(dialect = Dialect.MYSQL)
 public interface UserRepository extends GenericRepository<User, String> {
 
-  @Query("SELECT * from v_ele_users where username = :username")
+  @Query("SELECT * from v_users where username = :username")
   Optional<User> findByUsername(@NonNull String username);
 }

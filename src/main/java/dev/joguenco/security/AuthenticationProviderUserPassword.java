@@ -32,6 +32,9 @@ class AuthenticationProviderUserPassword<B> implements HttpRequestAuthentication
     if (user == null) {
       return AuthenticationResponse.failure(AuthenticationFailureReason.USER_NOT_FOUND);
     }
+    if (!user.status()) {
+      return AuthenticationResponse.failure(AuthenticationFailureReason.ACCOUNT_LOCKED);
+    }
 
     if (Hashcypher.authenticate(password, user.password())) {
       return AuthenticationResponse.success(username);
